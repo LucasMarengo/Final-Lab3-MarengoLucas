@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+// Proveedores
+Route::get('/proveedores', 'ProveedoresController@list')->name('ProveedoresController@list');
+Route::get('/proveedores/add', 'ProveedoresController@add')->name('ProveedoresController@add');
+Route::post('/proveedores', 'ProveedoresController@backAdd')->name('ProveedoresController@backAdd');

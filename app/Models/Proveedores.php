@@ -17,7 +17,7 @@ class Proveedores extends Model
     {
         return $this->nombre;
     }
-    public function getDescripcion(): string
+    public function getDescripcion(): ?string
     {
         return $this->descripcion;
     }
