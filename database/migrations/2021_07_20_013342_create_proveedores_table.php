@@ -17,7 +17,7 @@ class CreateProveedoresTable extends Migration
             $table->id();
             $table->string('codigo',6);
             $table->string('nombre',50);
-            $table->text('descripcion');
+            $table->text('descripcion')->nullable();
             $table->timestamps();
         });
     }
