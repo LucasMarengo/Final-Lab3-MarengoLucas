@@ -17,6 +17,20 @@ Route::get('/', function () {
     return view('index');
 });
 // Proveedores
-Route::get('/proveedores', 'ProveedoresController@list')->name('ProveedoresController@list');
+Route::get('/proveedores', 'ProveedoresController@index')->name('ProveedoresController@index');
 Route::get('/proveedores/add', 'ProveedoresController@add')->name('ProveedoresController@add');
 Route::post('/proveedores', 'ProveedoresController@backAdd')->name('ProveedoresController@backAdd');
+Route::get('/proveedores/{id}/edit', 'ProveedoresController@edit')->name('ProveedoresController@edit');
+Route::post('/proveedores/{id}', 'ProveedoresController@backEdit')->name('ProveedoresController@backEdit');
+Route::delete('/proveedores/{id}/delete', 'ProveedoresController@delete')->name('ProveedoresController@delete');
+
+
+// Categorias
+Route::get('/categorias', 'CategoriasController@index')->name('CategoriasController@index');
+Route::get('/categorias/add', 'CategoriasController@add')->name('CategoriasController@add');
+
+// Productos
+Route::get('/productos', 'ProductosController@index')->name('ProductosController@index');
+Route::get('/productos/add', 'ProductosController@add')->name('ProductosController@add');
+Route::get('/productos/stock', 'ProductosController@viewStock')->name('ProductosController@viewStock');
+Route::get('/productos/addStock', 'ProductosController@addStock')->name('ProductosController@addStock');

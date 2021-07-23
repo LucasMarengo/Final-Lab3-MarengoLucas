@@ -9,6 +9,10 @@ class Proveedores extends Model
 {
     use HasFactory;
     
+    public function getId()
+    {
+        return $this->id;
+    }
     public function getCodigo(): string
     {
         return $this->codigo;
@@ -21,6 +25,17 @@ class Proveedores extends Model
     {
         return $this->descripcion;
     }
-
+    public function setCodigo(string $codigo)
+    {
+        $this->codigo = $codigo;
+    }
+    public function setNombre(string $nombre)
+    {
+        $this->nombre = $nombre;
+    }
+    public function setDescripcion(?string $descripcion)
+    {
+        $this->descripcion = $descripcion;
+    }
 
 }
