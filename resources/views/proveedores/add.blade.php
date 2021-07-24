@@ -19,10 +19,8 @@
             <label for="descripcion" class="form-label">Descripcion</label>
             <textarea type="text" class="form-control" id="descripcion" name="descripcion"></textarea>
         </div>
-
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Agregar</button>
         </div>
-
     </form>
 @endsection
