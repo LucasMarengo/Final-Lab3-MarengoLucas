@@ -1,26 +1,37 @@
-function deleteItem(id) {
+function deleteItem(id, route, name) {
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
     event.preventDefault();
-    if (confirm('¿Desea Eliminar el proveedor?')) {
-        $.ajax({
-            url: '/proveedores/' + id + '/delete',
-            type: "DELETE",
-            data: {
-                id: id
-            },
-            success: function(data) {
-                if (data['status']) {
-                    $('#row-' + id).remove();
-                    successMessage(data['msg']);
-                }
+    Swal.fire({
+        title: '¿Estas Seguro que deseas eliminar "' + name + '"',
+        text: "Sera eliminado de " + route + " por siempre.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: '/' + route + '/' + id + '/delete',
+                type: "DELETE",
+                data: {
+                    id: id
+                },
+                success: function (data) {
+                    if (data['status']) {
+                        $('#row-' + id).remove();
+                        successMessage(data['msg']);
+                    }
 
-            }
-        });
-    }
+                }
+            });
+        }
+    })
 };
 
 

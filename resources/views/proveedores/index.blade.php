@@ -24,10 +24,10 @@
                     <td style="width: 180px">
                         <a href="{{ route('ProveedoresController@edit', ['id' => $proveedor->getId()]) }}"
                             class="btn btn-primary"> Editar </a>
-                        <a class="btn btn-danger" onclick="deleteItem('{{ $proveedor->getId() }}')"> Eliminar </a>
+                        <a class="btn btn-danger" onclick="deleteItem('{{ $proveedor->getId() }}','proveedores', '{{ $proveedor->getNombre() }}')"> Eliminar </a>
                     </td>
                 </tr>
             @endforeach
-        </tbody>
+        </tbody>$
     </table>
 @endsection

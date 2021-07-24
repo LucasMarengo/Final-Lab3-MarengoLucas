@@ -1,15 +1,11 @@
 @extends('index')
 
 @section('body')
-<h3 class="mt-3">Agregar Proveedor</h3>
+<h3 class="mt-3">Agregar Categoria</h3>
 <hr>
     @include('error')
-    <form class="row g-3 col-6" action="{{ route('ProveedoresController@backAdd') }}" method="post">
+    <form class="row g-3 col-6" action="{{ route('CategoriasController@backAdd') }}" method="post">
         @csrf
-        <div class="col-md-6">
-            <label for="codigo" class="form-label">Codigo*</label>
-            <input type="text" class="form-control" id="codigo" name="codigo" maxlength="6" minlength="6" required>
-        </div>
         <div class="col-md-6">
             <label for="nombre" class="form-label">Nombre*</label>
             <input type="text" class="form-control" id="nombre" name="nombre" required>

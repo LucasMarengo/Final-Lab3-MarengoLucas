@@ -28,6 +28,13 @@ Route::delete('/proveedores/{id}/delete', 'ProveedoresController@delete')->name(
 // Categorias
 Route::get('/categorias', 'CategoriasController@index')->name('CategoriasController@index');
 Route::get('/categorias/add', 'CategoriasController@add')->name('CategoriasController@add');
+Route::post('/categorias', 'CategoriasController@backAdd')->name('CategoriasController@backAdd');
+Route::get('/categorias/{id}/edit', 'CategoriasController@edit')->name('CategoriasController@edit');
+Route::post('/categorias/{id}', 'CategoriasController@backEdit')->name('CategoriasController@backEdit');
+Route::delete('/categorias/{id}/delete', 'CategoriasController@delete')->name('CategoriasController@delete');
+
+
+
 
 // Productos
 Route::get('/productos', 'ProductosController@index')->name('ProductosController@index');

@@ -14,6 +14,8 @@
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/toastr.css') }}" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body class="sb-nav-fixed">
@@ -118,6 +120,7 @@
     <script src="{{ asset('js/datatables-simple-demo.js') }}"></script>
     <script src="{{ asset('js/toastr.min.js') }}"></script>
     <script  src="{{ asset('js/scripts.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
