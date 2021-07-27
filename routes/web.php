@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
 // Proveedores
 Route::get('/proveedores', 'ProveedoresController@index')->name('ProveedoresController@index');
 Route::get('/proveedores/add', 'ProveedoresController@add')->name('ProveedoresController@add');
@@ -23,7 +24,6 @@ Route::post('/proveedores', 'ProveedoresController@backAdd')->name('ProveedoresC
 Route::get('/proveedores/{id}/edit', 'ProveedoresController@edit')->name('ProveedoresController@edit');
 Route::post('/proveedores/{id}', 'ProveedoresController@backEdit')->name('ProveedoresController@backEdit');
 Route::delete('/proveedores/{id}/delete', 'ProveedoresController@delete')->name('ProveedoresController@delete');
-
 
 // Categorias
 Route::get('/categorias', 'CategoriasController@index')->name('CategoriasController@index');
@@ -33,11 +33,14 @@ Route::get('/categorias/{id}/edit', 'CategoriasController@edit')->name('Categori
 Route::post('/categorias/{id}', 'CategoriasController@backEdit')->name('CategoriasController@backEdit');
 Route::delete('/categorias/{id}/delete', 'CategoriasController@delete')->name('CategoriasController@delete');
 
-
-
-
 // Productos
 Route::get('/productos', 'ProductosController@index')->name('ProductosController@index');
+Route::post('/productos', 'ProductosController@productSearch')->name('ProductosController@productSearch');
 Route::get('/productos/add', 'ProductosController@add')->name('ProductosController@add');
-Route::get('/productos/stock', 'ProductosController@viewStock')->name('ProductosController@viewStock');
-Route::get('/productos/addStock', 'ProductosController@addStock')->name('ProductosController@addStock');
+Route::post('/productos/backadd', 'ProductosController@backAdd')->name('ProductosController@backAdd');
+Route::get('/productos/{id}/edit', 'ProductosController@edit')->name('ProductosController@edit');
+Route::post('/productos/{id}', 'ProductosController@backEdit')->name('ProductosController@backEdit');
+Route::delete('/productos/{id}/delete', 'ProductosController@delete')->name('ProductosController@delete');
+Route::get('/productos/alta/ver', 'ProductosController@addStock')->name('ProductosController@addStock');
+Route::post('/productos/alta/ver', 'ProductosController@backStock')->name('ProductosController@backStock');
+Route::get('/productos/informe/ver', 'ProductosController@viewStock')->name('ProductosController@viewStock');

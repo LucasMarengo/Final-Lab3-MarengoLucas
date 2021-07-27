@@ -18,9 +18,10 @@ class CreateProductosTable extends Migration
             $table->string('codigo',6);
             $table->string('nombre',50);
             $table->text('descripcion');
+            $table->double('precio',15,8);
             $table->integer('stock')->nullable();
-            $table->string('proveedor',6);
-            $table->integer('categoria');
+            $table->integer('proveedor_id')->unsigned();
+            $table->integer('categoria_id')->unsigned();
             $table->timestamps();
         });
     }
