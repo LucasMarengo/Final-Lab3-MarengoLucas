@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="">
-        <h3 class="mt-3">Listado de proveedores <a class="btn btn-success " style="float: right"
+        <h3 class="mt-3">Listado de Proveedores <a class="btn btn-success " style="float: right"
                 href="{{ route('ProveedoresController@add') }}">Agregar Proveedor</a></h3>
     </div>
     <hr>

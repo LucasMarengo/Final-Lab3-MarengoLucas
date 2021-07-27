@@ -39,8 +39,8 @@ Route::post('/productos', 'ProductosController@productSearch')->name('ProductosC
 Route::get('/productos/add', 'ProductosController@add')->name('ProductosController@add');
 Route::post('/productos/backadd', 'ProductosController@backAdd')->name('ProductosController@backAdd');
 Route::get('/productos/{id}/edit', 'ProductosController@edit')->name('ProductosController@edit');
-Route::post('/productos/{id}', 'ProductosController@backEdit')->name('ProductosController@backEdit');
 Route::delete('/productos/{id}/delete', 'ProductosController@delete')->name('ProductosController@delete');
+Route::post('/productos/{id}', 'ProductosController@backEdit')->name('ProductosController@backEdit');
 Route::get('/productos/alta/ver', 'ProductosController@addStock')->name('ProductosController@addStock');
 Route::post('/productos/alta/ver', 'ProductosController@backStock')->name('ProductosController@backStock');
 Route::get('/productos/informe/ver', 'ProductosController@viewStock')->name('ProductosController@viewStock');

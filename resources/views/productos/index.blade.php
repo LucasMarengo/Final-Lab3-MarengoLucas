@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="">
-        <h3 class="mt-3">Listado de productos <a class="btn btn-success" style="float: right"
+        <h3 class="mt-3">Listado de Productos <a class="btn btn-success" style="float: right"
                 href="{{ route('ProductosController@add') }}">Agregar Producto</a></h3>
     </div>
     <form action="{{ route('ProductosController@productSearch') }}" method="post">
@@ -46,7 +46,7 @@
                         <a href="{{ route('ProductosController@edit', ['id' => $producto->id]) }}"
                             class="btn btn-primary"> Editar </a>
                         <a class="btn btn-danger"
-                            onclick="deleteItem('{{ $producto->id }}','proveedores', '{{ $producto->nombre }}')">
+                            onclick="deleteItem('{{ $producto->id }}','productos', '{{ $producto->nombre }}')">
                             Eliminar </a>
                     </td>
                 </tr>

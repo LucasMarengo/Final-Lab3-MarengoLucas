@@ -21,7 +21,7 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Final Lab.3</a>
+        <a class="navbar-brand ps-3" href="/">Final Lab.3</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
@@ -31,27 +31,9 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <a class="nav-link" href="{{ route('ProductosController@viewStock') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Ver Informes
-                        </a>
-                        <a class="nav-link" href="{{ route('ProductosController@addStock') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Alta de Compra
-                        </a>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseProductos" aria-expanded="false" aria-controls="collapseProductos">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Productos
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseProductos" aria-labelledby="headingOne"
-                            data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('ProductosController@index') }}">Ver Productos</a>
-                                <a class="nav-link" href="{{ route('ProductosController@add') }}">Agregar Producto</a>
-                            </nav>
-                        </div>
+
+
+
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseProveedores" aria-expanded="false"
                             aria-controls="collapseProveedores">
@@ -84,15 +66,35 @@
                                     Categoria</a>
                             </nav>
                         </div>
-
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseProductos" aria-expanded="false" aria-controls="collapseProductos">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Productos
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseProductos" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{ route('ProductosController@index') }}">Ver Productos</a>
+                                <a class="nav-link" href="{{ route('ProductosController@add') }}">Agregar Producto</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link" href="{{ route('ProductosController@addStock') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Alta de Compra
+                        </a>
+                        <a class="nav-link" href="{{ route('ProductosController@viewStock') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Ver Informes
+                        </a>
                     </div>
                 </div>
-              
+
             </nav>
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
+                <div class="container-fluid p-4">
                     @yield('body')
                 </div>
             </main>
@@ -106,7 +108,7 @@
             </footer>
         </div>
     </div>
-    <script  src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -116,7 +118,7 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="{{ asset('js/datatables-simple-demo.js') }}"></script>
     <script src="{{ asset('js/toastr.min.js') }}"></script>
-    <script  src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>

@@ -10,7 +10,7 @@ class ProductosService extends ValidationService
 {
     private $productosRepository;
 
-    private function setAttr(Productos $producto,string $codigo, string $nombre, string $descripcion, float $precio, int $proveedor_id,int $categoria_id)
+    private function setAttr(Productos $producto,string $codigo, string $nombre, string $descripcion, float $precio, int $proveedor_id,int $categoria_id,int $stock = 0)
     {
         $producto->setCodigo($codigo);
         $producto->setNombre($nombre);
@@ -18,7 +18,7 @@ class ProductosService extends ValidationService
         $producto->setPrecio($precio);
         $producto->setProveedor($proveedor_id);
         $producto->setCategoria($categoria_id);
-        $producto->setStock(0);
+        $producto->setStock($stock);
     }
 
     public function __construct(ProductosRepository $productosRepository)
@@ -38,7 +38,7 @@ class ProductosService extends ValidationService
     {
         $this->validarLargoCodigo($codigo);
         $producto = $this->productosRepository->findOrFail($id);
-        $this->setAttr($producto,$codigo, $nombre, $descripcion,$precio,$proveedor_id,$categoria_id);
+        $this->setAttr($producto,$codigo, $nombre, $descripcion,$precio,$proveedor_id,$categoria_id,$producto->stock);
         $this->productosRepository->save($producto);
     }
     public function addStock(int $id,int $stock)

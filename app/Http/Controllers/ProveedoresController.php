@@ -24,7 +24,7 @@ class ProveedoresController extends Controller
         $request->validate(['codigo'=> 'unique:proveedores,codigo']);
         $service->add($request->input('codigo'), $request->input('nombre'), $request->input('descripcion'));
 
-        return view('exito_new');
+        return view('exito',['msg' => 'Proveedor agregado correctamente']);
     }
 
     public function edit(string $id, ProveedoresRepository $repository)
@@ -37,15 +37,14 @@ class ProveedoresController extends Controller
         $this->validarRequest($request);
         $service->edit($id,$request->input('codigo'), $request->input('nombre'), $request->input('descripcion'));
 
-        return view('exito_edit');
+        return view('exito',['msg' => 'Proveedor editado correctamente']);
     }
 
 
     public function delete($id,ProveedoresRepository $repository)
     {
-
          $repository->delete($id);
-         return ['status' => true,'msg' =>'Proveedor Eliminado exitosamente'];
+         return ['status' => true,'msg' =>'Proveedor eliminado correctamente'];
     }
 
     private function validarRequest(Request $request)

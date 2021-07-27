@@ -23,7 +23,7 @@ class CategoriasController extends Controller
         $this->validarRequest($request);
         $service->add($request->input('nombre'), $request->input('descripcion'));
 
-        return view('exito_new');
+        return view('exito',['msg' => 'Categoria agregada correctamente']);
     }
 
     public function edit(string $id, CategoriasRepository $repository)
@@ -36,14 +36,14 @@ class CategoriasController extends Controller
         $this->validarRequest($request);
         $service->edit($id,$request->input('nombre'), $request->input('descripcion'));
 
-        return view('exito_edit');
+        return view('exito',['msg' => 'Categoria editada correctamente']);
     }
 
 
     public function delete($id,CategoriasRepository $repository)
     {
          $repository->delete($id);
-         return ['status' => true,'msg' =>'Categoria Eliminado exitosamente'];
+         return ['status' => true,'msg' =>'Categoria eliminada correctamente'];
     }
 
     private function validarRequest(Request $request)

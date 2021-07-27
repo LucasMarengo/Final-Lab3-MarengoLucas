@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('body')
-    <h3 class="mt-3"></h3>
+    <h3 class="mt-3">Alta de Compra</h3>
     <hr>
     @include('error')
     <form class="row g-3 col-6" action="{{ route('ProductosController@backStock') }}" method="post">

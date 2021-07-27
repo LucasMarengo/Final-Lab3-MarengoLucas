@@ -33,7 +33,7 @@ class ProductosController extends Controller
             $request->input('proveedor_id'),
             $request->input('categoria_id'),
         );
-        return view('exito_new');
+        return view('exito',['msg' => 'Producto agregado correctamente']);
     }
 
     public function edit(string $id, ProductosRepository $repository, ProveedoresRepository $proveedores_repository, CategoriasRepository $categorias_repository)
@@ -55,7 +55,7 @@ class ProductosController extends Controller
             $request->input('categoria_id'),
         );
 
-        return view('exito_edit');
+        return view('exito',['msg' => 'Producto editado correctamente']);
     }
 
 
@@ -74,7 +74,7 @@ class ProductosController extends Controller
             $request->input('stock')
         );
 
-        return view('exito_alta');
+        return view('exito',['msg' => 'Compra dada de alta']);
     }
 
     public function viewStock(ProductosRepository $repository)
@@ -83,16 +83,14 @@ class ProductosController extends Controller
     }
     public function delete($id, ProductosRepository $repository)
     {
-
         $repository->delete($id);
-        return ['status' => true, 'msg' => 'Producto Eliminado exitosamente'];
+        return ['status' => true, 'msg' => 'Producto eliminado correctamente'];
     }
 
     public function productSearch(Request $request, ProductosRepository $repository)
     {
         return view('productos.index', ['productos' => $repository->search($request->input('search'))]);
     }
-
 
 
     private function validarRequest(Request $request)
